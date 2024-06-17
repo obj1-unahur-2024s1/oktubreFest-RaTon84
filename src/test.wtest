@@ -1,0 +1,26 @@
+import objects.*
+
+describe "test primera parte"{
+	const cerveza1 = new Hofbrau(lupulo=20,pais="belgica",graduacionReglamentaria=0.08)
+	const jarra1 = new Jarra(litros=0.5,marca=cerveza1)
+	const persona1 = new Persona(peso=70,
+		jarrasCompradas=[jarra1,jarra1],
+		escuchaMusicaTradicional=true,
+		nivelDeAguante=50,
+		pais="belgica"
+	)
+	
+	
+	test "cerveza"{
+		assert.equals(jarra1.contenidoDeAlcohol(),0.04)
+	}
+	test "total de alcohol"{
+		assert.equals(persona1.totalDeAlcohol(),0.08)
+	}
+	test "ebria"{
+		assert.notThat(persona1.estaEbria())
+	}
+	test "le gusta"{
+		assert.that(persona1.leGusta(cerveza1))
+	}
+}
