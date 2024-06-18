@@ -58,8 +58,7 @@ class Persona{
 	method jarraAnteriror(i){return if(i==0) jarrasCompradas.first() else jarrasCompradas.get(i-1)}
 	
 	method estaEntrandoEnElVicio(){
-		return (0..jarrasCompradas.size())
-			.all({i=>jarrasCompradas.get(i)>=self.jarraAnteriror(i)})
+		return (0..jarrasCompradas.size()).all({i=>jarrasCompradas.get(i)>=self.jarraAnteriror(i)})
 	}	
 }
 
